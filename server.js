@@ -1,19 +1,20 @@
-const express = require('express');
-const cors = require('cors');
-const app = express();
-const PORT = process.env.PORT || 10000;
-
-app.use(cors());
-app.use(express.json());
-
-app.get('/', (req, res) => {
-  res.send('KeenatPay Backend is Running! ✅');
-});
-
-app.get('/api/status', (req, res) => {
-  res.json({ status: 'ok', message: 'Backend working' });
-});
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+/app/pay/mynita
+/api/pay/niger with receiver_niger + receiver_nigeria
+app.get('/api/pay/niger') with Mustapha Sani 94977274
+// NIGER PAYMENT - FINAL VERSION
+app.get('/api/pay/niger', (req, res) => {
+  res.json({
+    status: "success",
+    method: "MyNITA / Orange Money Niger",
+    receiver: {
+      name: "Mustapha Sani",
+      phone: "94977274",
+      full_phone: "+22794977274"
+    },
+    confirmation: {
+      name: "Umar Hadi Gwani",
+      whatsapp: "09026133849"
+    },
+    instructions: "Envoyez via MyNITA a 94 97 72 74"
+  });
 });
