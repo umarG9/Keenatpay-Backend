@@ -1,7 +1,14 @@
-/app/pay/mynita
-/api/pay/niger with receiver_niger + receiver_nigeria
-app.get('/api/pay/niger') with Mustapha Sani 94977274
-// NIGER PAYMENT - FINAL VERSION
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('KeenatPay Backend is Running');
+});
+
+// NIGER PAYMENT - MyNITA & Orange Money
 app.get('/api/pay/niger', (req, res) => {
   res.json({
     status: "success",
@@ -17,4 +24,8 @@ app.get('/api/pay/niger', (req, res) => {
     },
     instructions: "Envoyez via MyNITA a 94 97 72 74"
   });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
